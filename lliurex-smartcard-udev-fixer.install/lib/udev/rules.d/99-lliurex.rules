@@ -1,0 +1,5 @@
+
+# set USB power management to auto. "power/level" has been deprecated in
+# Linux 2.6.35 and replaced by "power/control"
+ENV{ID_USB_INTERFACES}=="*:0b0000:*", RUN+="/bin/sh -c 'echo auto > /sys/$devpath/power/level ; echo on > /sys/$devpath/power/control'"
+
